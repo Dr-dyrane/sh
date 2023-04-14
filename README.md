@@ -29,8 +29,8 @@ This will build the `shell` executable.
 To get started, clone the repository and compile the program using the `gcc` compiler:
 
 ```bash
-$ git clone https://github.com/Dr-dyrane/simple-shell.git
-$ cd simple-shell
+$ git clone https://github.com/Dr-dyrane/sh.git
+$ cd sh
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o shell
 ```
 
