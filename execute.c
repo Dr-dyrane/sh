@@ -10,16 +10,17 @@ int execute(char *line)
 {
     size_t len = _strlen(line);
 
-    if (line[len - 1] != '\n') {
-        line[len - 1] = '\n';  // add newline character
+    if (line[len - 1] != '\n')
+    {
+        line[len - 1] = '\n';// add newline character
         len--;
     }
 
      if (write(STDOUT_FILENO, line, len) == -1)
     {
         perror("write");
-        return EXIT_FAILURE;
+        return (EXIT_FAILURE);
     }
 
-    return EXIT_SUCCESS;
+    return (EXIT_SUCCESS);
 }

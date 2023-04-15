@@ -22,11 +22,13 @@ int main(void)
 #elif _WIN32
         len = 1024; // set len to a reasonable value
         line = malloc(len);
-        if (!line) {
+        if (!line)
+        {
             perror("malloc");
             exit(EXIT_FAILURE);
         }
-        if (fgets(line, len, stdin) == NULL) {
+        if (fgets(line, len, stdin) == NULL)
+        {
             free(line);
             exit(EXIT_SUCCESS);
         }
