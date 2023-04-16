@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _realloc - custom implementation of realloc using sbrk or VirtualAlloc
+ * _realloc - custom implementation of realloc using _sbrk or VirtualAlloc
  *
  * @ptr: a pointer to the memory block to reallocate
  * @size: the new size of the memory block
@@ -12,7 +12,7 @@ void *_realloc(void *ptr, size_t size)
 {
 #ifdef _WIN32 /* Windows specific code */
     if (ptr == NULL)
-        return _malloc(size);
+        return malloc(size);
 
     void *new_ptr = VirtualAlloc(NULL, size, MEM_COMMIT, PAGE_READWRITE);
     if (new_ptr == NULL)
@@ -25,9 +25,9 @@ void *_realloc(void *ptr, size_t size)
 
 #else /* Linux specific code */
     if (ptr == NULL)
-        return _malloc(size);
+        return malloc(size);
 
-    void *new_ptr = sbrk(size);
+    void *new_ptr = _sbrk(size);
     if (new_ptr == (void *) -1)
         return NULL;
 

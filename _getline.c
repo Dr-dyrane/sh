@@ -16,7 +16,7 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 
     if (*lineptr == NULL)
     {
-        *lineptr = _malloc(READ_SIZE);
+        *lineptr = malloc(READ_SIZE);
         if (*lineptr == NULL)
         {
             return -1;
