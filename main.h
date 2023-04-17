@@ -28,5 +28,6 @@ int _getline(char **lineptr, size_t *n, FILE *stream);
 int _fgetc(FILE *stream);
 void *_realloc(void *ptr, size_t size);
 void *_memcpy(void *dest, const void *src, size_t n);
+int _putchar(int c);
 
 #endif /* MAIN_H */
