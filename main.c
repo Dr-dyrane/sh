@@ -18,7 +18,7 @@ int main(void)
         print_prompt();
 
 #ifdef __linux__
-        nread = getline(&line, &len, stdin);
+        nread = _getline(&line, &len, stdin);
 #elif _WIN32
         len = 1024; // set len to a reasonable value
         line = malloc(len);
